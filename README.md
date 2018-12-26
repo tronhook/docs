@@ -96,8 +96,7 @@ BlockSyncES{
 }
 
 ```
-## AccountSyncHook
-Synchronizes the accounts into an elasticsearch database
+
 
 ## NotificationHook
 
@@ -224,3 +223,6 @@ docker run -p 7171:7171 --name tronhook.blocks -d -v application.prod.conf:/appl
 
 # Writing your own Hook
 TODO
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbLTk0NjcwNzg0MF19
+-->
