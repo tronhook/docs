@@ -1,6 +1,8 @@
 # Node
 The node is the engine that lets you run a hook. When you run a node you have to specify the hook to use and it's configuration.
 
+![TronHook node](https://raw.githubusercontent.com/tronhook/docs/master/images/node.png)
+
 !> A node can run a single hook, but you can run as many node as you want on a single or multiple servers.
 
 ## Block processor
