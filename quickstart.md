@@ -1,6 +1,6 @@
 # Quickstart
 
-The easiest way to get started with TronHook is to use the Docker image.
+The easiest way to get started with TronHook is to use the Docker image. If you don't want to use Docker, follow the steps [here](/node?id=from-source)
 
 ## Setup your configuration file
 
@@ -35,7 +35,7 @@ Follow these steps if you want to start receiving notifications via websocket or
 Run the node:
 
 ```bash
-docker run -p 7171:7171 -p 7272:7272 --link mongo --name tronhook.notification -d -v application.prod.conf:/application.prod.conf -e APP_OPTS="prod hook=org.tronhook.hook.NotificationHook" tronhook/node
+docker run -p 7171:7171 -p 7272:7272 --link mongo --name tronhook.notification -d -v ${working_dir}/application.prod.conf:/application.prod.conf -e APP_OPTS="prod hook=org.tronhook.hook.NotificationHook" tronhook/node
 ```
 
 This hook will start sending messages via websocket to port 7272
@@ -45,7 +45,7 @@ You can start receiving message on client side with this sample code:
 ```javascript
 var ws = new WebSocket('ws://localhost:7272')
 ws.onmessage = (msg) => {
-    let message = JSON.parse(msg.data)
+    const message = JSON.parse(msg.data)
 }
 ```
 
@@ -54,7 +54,7 @@ ws.onmessage = (msg) => {
 
 Follow these steps if you want to synchronize data from Tron blockchain into a database
 
-The database used to is elasticsearch, you can start an elasticsearch instance with following command:
+The database used is elasticsearch, you can start an elasticsearch instance with following command:
 
 ```bash
 docker run -d --name elastic /home/<user>/elastic-data:/usr/share/elasticsearch/data -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:6.5.
@@ -66,4 +66,4 @@ Run the node:
 docker run -p 7171:7171 -p 7272:7272 --link mongo --name tronhook.blocksync -d -v application.prod.conf:/application.prod.conf -e APP_OPTS="prod hook=org.tronhook.hook.elastic.BlockSyncHook" tronhook/node
 ```
 
-!> If no rule was added into rule engine, every blocks/transactions will be synced. Otherwise, only those matching your rules will be synced.
+!> If no rule was submitted to rule engine, every blocks/transactions will be processed. Otherwise, only those matching your rules will be synced.

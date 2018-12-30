@@ -1,5 +1,5 @@
   * [Quick start](quickstart.md)
   * [Node](node.md)
-  * [Hooks](hooks.md)
   * [Rules](rules.md)
+  * [Hooks](hooks.md)
   * [Configuration](configuration.md)
