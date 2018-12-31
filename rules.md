@@ -5,7 +5,7 @@ TronHook comes with a rule engine that allows you to filter some blocks and or t
 
 Rules can be added dynamically at runtime through TronHook [node's API](node?id=api) without any restart required.
 
-Rules are expression where you can use logical / relational operators in order to test conditions. [See the available operators](/rules?id=rule-expression)
+Rules are expression where you can use logical / relational operators in order to test conditions [See the available operators](/rules?id=rule-expression) on a [model](/model ':ignore')
 
 ## Rules examples
 Here are some examples of rules submitted to the rule engine's API with `curl`:
@@ -58,6 +58,8 @@ repeat | [once\|always] if "once" the rule will be removed the first time it mat
 ## Rule expression
 
 A rule is an expression with one or multiple operators applied on transactions or block model. You can access any field of these model in order to test your conditions.
+
+!> You can check the fieds and methods that can be used in the rule expression [here](/model ':ignore')
 
 ### Relational operators
 The relational operators supported are:
