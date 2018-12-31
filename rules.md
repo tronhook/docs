@@ -90,7 +90,7 @@ type==4 and not contract.votes.?[voteAddress == 'TGzz8gjYiYRqpfmDwnLxfgPuLVNmpCs
 
 This expression would test if a vote to a specific address exists in the vote list. 
 
-To simplify the expression some helpers are avaible: you can check directly into the model documentation for the available helpers you can use.
+To simplify the expression some helpers are avaible: you can check directly into the [model documentation](/docs/model ':ignore') for the available helpers you can use.
 
 For exemple previous expression could be written like the following:
 
