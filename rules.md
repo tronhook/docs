@@ -38,7 +38,7 @@ curl -X POST "localhost:7171/rule" -H 'Content-Type: application/json' -d'
 curl -X POST "localhost:7171/rule" -H 'Content-Type: application/json' -d'
 {
 	"id":"contract_trigger",
-	"rule":"tx.type==31 and contract.contractAddress=='TEEXEWrkMFKapSMJ6mErg39ELFKDqEs6w3'",
+	"rule":"type==31 and contract.contractAddress=='TEEXEWrkMFKapSMJ6mErg39ELFKDqEs6w3'",
 	"context":"transaction",
 	"repeat":"always"
 }
@@ -82,7 +82,7 @@ The logical operators that are supported are:
 
 ### Helpers method
 
-With relational and logical operators you can express almost any rule you want, but sometimes a rule can be a little bit tricky to express. For example when you want to test if a value is part of an array, the expression can look like this
+With relational and logical operators you can express almost any rule you want, but sometimes a rule can be a little bit tricky to express. For example when you want to test if a value is part of a list, the expression can look like this
 
 ```
 type==4 and not contract.votes.?[voteAddress == 'TGzz8gjYiYRqpfmDwnLxfgPuLVNmpCswVp'].isEmpty()
